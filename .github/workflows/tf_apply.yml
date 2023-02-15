@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: terraform_apply
+  group: terraform
 
 jobs:
   apply:
