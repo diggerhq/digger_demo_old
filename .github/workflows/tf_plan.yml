@@ -1,0 +1,21 @@
+name: terraform plan
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    container: dockerdiggerorg/dgctl
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v3
+
+      - name: run terraform plan
+        run: | 
+          terraform init
+          terraform plan
