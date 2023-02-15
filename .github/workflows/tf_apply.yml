@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  plan:
+  apply:
     runs-on: ubuntu-latest
     container: dockerdiggerorg/dgctl
     steps:
@@ -16,4 +16,4 @@ jobs:
       - name: run terraform apply
         run: | 
           terraform init
-          terraform apply
+          terraform apply -auto-approve
